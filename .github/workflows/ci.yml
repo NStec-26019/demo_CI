@@ -26,3 +26,13 @@ jobs:
       run: |
         chmod +x gradlew
         ./gradlew build
+    
+    - name: プロジェクトのビルド
+      # テストを除外してビルドのみを実行
+      run: |
+        chmod +x gradlew
+        ./gradlew build -x test
+
+    - name: 単体テストの実行
+      # テストタスクのみを実行
+      run: ./gradlew test
