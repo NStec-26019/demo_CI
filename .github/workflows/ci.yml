@@ -27,6 +27,11 @@ jobs:
         chmod +x gradlew
         ./gradlew build
     
+    - name: コードフォーマットの検証 (Lint)
+      run: |
+        chmod +x gradlew
+        ./gradlew spotlessCheck
+    
     - name: プロジェクトのビルド
       # テストを除外してビルドのみを実行
       run: |
